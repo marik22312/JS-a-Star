@@ -1,0 +1,70 @@
+#board {
+  display: inline-block;
+  height: 500px;
+}
+
+#board .theROW {
+  height: 8.3%;
+}
+
+#board .theROW .cell {
+  border: 1px solid black;
+  height: 100%;
+}
+
+button {
+  display: block;
+}
+
+#aside-finish {
+  /* #startOver */
+}
+
+#aside-finish #startOver {
+  background-color: #d7d7db;
+  color: #ffffff;
+  border-left: 5px solid #41a665;
+  text-transform: capitalize;
+  /* #text */
+}
+
+#aside-finish #startOver #checkmark {
+  text-align: left;
+  display: inline-block;
+  color: #42a766;
+}
+
+#aside-finish #startOver #text {
+  display: inline-block;
+  margin-left: 15%;
+  font-weight: 600;
+}
+
+#aside-finish #startOver:hover {
+  background-color: #252525;
+  /* #text */
+}
+
+#aside-finish #startOver:hover #checkmark {
+  text-align: left;
+  display: inline-block;
+  color: #c42b4a;
+}
+
+#aside-finish #startOver:hover #text {
+  display: inline-block;
+  margin-left: 15%;
+  font-weight: 600;
+}
+
+.empty {
+  background-color: #999999;
+}
+
+.wall {
+  background-color: #000000;
+}
+
+.path {
+  background-color: #ffffff;
+}

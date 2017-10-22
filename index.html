@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title></title>
+
+  </head>
+  <body ng-controller="mainCtrl" ng-init="init()">
+    <aside class="col-xs-1" ng-show="!finished">
+      <button ng-click="mode = 1" class="col-xs-12">START</button>
+      <button ng-click="mode = 2" class="col-xs-12">END</button>
+      <button ng-click="startGame();" class="col-xs-12">Go!</button>
+      <button ng-click="Debug();" class="col-xs-12">Debug!</button>
+      <button ng-click="finished = true;" class="col-xs-12">finish!</button>
+    </aside>
+    <aside id="aside-finish"class="col-xs-2" ng-show="finished">
+      <div id="startOver" ng-click="init();" class="col-xs-12">
+        <div id="checkmark">
+        <i class="fa fa-check-circle" aria-hidden="true"></i>
+      </div>
+      <div id="text">
+        start over
+      </div>
+      </div>
+    </aside>
+<div ng-if="!finished"id="board" class="container">
+  <div ng-repeat="row in tiles track by $index" class="theROW col-xs-11">
+    <!-- <span style="color:red;">{{$index}}</span> -->
+    <div ng-class="{ 'wall': cell.isWall, 'empty': !cell.isWall, 'path': cell.isPath }" class="cell col-xs-1" href="#" ng-repeat="cell in row track by $index" ng-click="cell.setValue()">
+      <span ng-if="cell.isStart">start</span>
+      <span ng-if="cell.isEnd">end</span>
+    </div>
+  </div>
+</div>
+<div ng-if="finished" class="col-xs-11">
+  <p>
+    Job ended successfully with {{stepCount}} Steps.
+  </p>
+  <div id="restart">
+
+  </div>
+
+</div>
+
+<script type="text/javascript" src="./lib/angularjs/angular.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="./lib/jquery/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="./lib/bootstrap/bootstrap.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="./js/app.js" charset="utf-8"></script>
+
+<link rel="stylesheet" href="./lib/bootstrap/bootstrap.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="./css/stylesheet.css">
+
+</script>
+  </body>
+</html>
